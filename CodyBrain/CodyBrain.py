@@ -20,21 +20,19 @@ while True:
 	data = conn.recv(1024)
 	print 'I sent a message back in response to: ' + data
 	reply = ''
+	command = data.split(", ")
 
-	# Testing Connection
-	if data == 'Ping':
-		reply = 'Pong'
-    elif data == 'Motor On'
-        reply = 'Motor is On'
-        #Do motor stuff
-    elif data == 'Servo On'
-        reply = 'Servo is On'
-        #Do servo stuff
-    elif data == 'LA On'
-        reply = 'LA is On'
-        #Do linear actuator stuff
-	#and so on and on until...
-	elif data == 'quit':
+	#Running commands
+	if command[0] == 'Mo': #Motor commands
+		motor_control(command[1], command[2], command[3])
+		
+    elif command[0] == 'LA' : #Linear Actuator commands
+        LA_control(command[1], command[2])
+		
+    elif command[0] == 'Se' : #Servo commands
+        servo_control(command[1], command[2])
+		
+	elif command[0] == 'quit':
 		conn.send('Terminating')
 		break
 	else:
@@ -43,3 +41,12 @@ while True:
 	# Sending reply
 	conn.send(reply)
 	conn.close() # Close connections
+	
+def motor_control(Power, Direction, Speed)
+	#Do motor stuff
+
+def LA_Control(Power, Speed)
+	#Do Linear Actuator stuff
+	
+def servo_control(Power, Pos)
+	#Do Servo stuff

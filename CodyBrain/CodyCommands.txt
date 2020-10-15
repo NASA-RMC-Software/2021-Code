@@ -1,0 +1,4 @@
+Cody Brain Command Structure
+Motor - "Mo, On/Off, Direction, Speed"
+Linear Actuator  - "LA, On/Off, Speed"
+Servo - "Se, On/Off, Position Value"
