@@ -1,5 +1,3 @@
-import wiringpi as GPIO
-
 from gpiozero import PWMOutputDevice
 from time import sleep
  
@@ -25,11 +23,13 @@ def forwardDrive(x):
 def reverseDrive(x):
 	forward.value = 0
 	reverse.value = x
-	
-def main():
+
+
+
+while True:
 	allStop()
-	forwardDrive()
+	forwardDrive(.10)
 	sleep(5)
-	reverseDrive()
+	reverseDrive(.10)
 	sleep(5)
 	allStop()
