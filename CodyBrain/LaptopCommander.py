@@ -1,6 +1,6 @@
 import socket
 
-HOST = '192.168.1.143' # Enter IP of Cody
+HOST = '10.10.16.214' # Enter IP of Cody
 PORT = 12345 # Pick an open Port (1000+ recommended), must match the Cody port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST,PORT))
